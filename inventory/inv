@@ -1,4 +1,5 @@
-tmaster
+[tmaster]
+tmaster.example.com ansible_user=ansible
 
 [web]
 
