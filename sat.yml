@@ -1,0 +1,20 @@
+---
+- name: connection check
+  hosts: all
+
+
+
+  tasks:
+    - name: check network connectivity
+      ansible.builtin.wait_for:
+        timeout: 10
+      delegate_to: localhost
+
+  hosts: node1
+  tasks:
+    - name: create user
+      ansible.builtin.user:
+        name: kiwi
+        password: "{{ 'MySecurePassword123' | password_hash('sha512') }}"
+        update_password: on_create
+        state: present
