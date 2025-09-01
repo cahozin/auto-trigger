@@ -1,1 +1,20 @@
+[tmaster]
+tmaster.example.com ansible_user=ansible
 
+[web]
+
+node
+
+[net]
+
+node1
+
+[app]
+
+node2
+
+[us:children]
+
+net
+
+web
